@@ -14,7 +14,6 @@ export async function getStaticProps() {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
   const posts = await res.json();
 
-  console.log(posts);
   // By returning { props: posts }, the Blog component
   // will receive `posts` as a prop at build time
   return {
