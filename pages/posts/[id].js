@@ -3,6 +3,7 @@ function Post({ post }) {
 }
 
 export async function getStaticProps({ params }) {
+  console.log("getStaticProps");
   // params contains the post `id`.
   // If the route is like /posts/1, then params.id is 1
   const res = await fetch(
@@ -16,6 +17,7 @@ export async function getStaticProps({ params }) {
 
 // This also gets called at build time
 export async function getStaticPaths() {
+  console.log("getStaticPaths");
   // Call an external API endpoint to get posts
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
   const posts = await res.json();
