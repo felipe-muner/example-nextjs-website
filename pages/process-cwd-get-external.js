@@ -3,10 +3,11 @@ import path from "path";
 
 // posts will be populated at build time by getStaticProps()
 function Blog({ posts }) {
+  console.log(posts);
   return (
     <ul>
       {posts.map((post) => (
-        <li>
+        <li key={post.filename}>
           <h3>{post.filename}</h3>
           <p>{post.content}</p>
         </li>
@@ -19,9 +20,9 @@ function Blog({ posts }) {
 // It won't be called on client-side, so you can even do
 // direct database queries. See the "Technical details" section.
 export async function getStaticProps() {
-  const postsDirectory = path.join(process.cwd(), "posts");
-  console.log("directory");
-
+  const postsDirectory = path.join(process.cwd(), "process-cwd-example");
+  console.log("postsDirectory");
+  console.log(process.cwd());
   console.log(postsDirectory);
   const filenames = fs.readdirSync(postsDirectory);
 
