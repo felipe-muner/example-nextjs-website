@@ -1,10 +1,10 @@
 import { InferGetStaticPropsType } from "next";
 
 type Post = {
-  body: string;
+  userId: number;
   id: number;
   title: string;
-  userId: number;
+  body: string;
 };
 
 export const getStaticProps = async () => {
