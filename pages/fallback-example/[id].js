@@ -14,7 +14,6 @@ function User({ user }) {
     <div>
       <h2>wqe</h2>
       {JSON.stringify(user)}
-      {}
     </div>
   );
 }
