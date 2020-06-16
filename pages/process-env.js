@@ -1,5 +1,4 @@
 export async function getStaticProps() {
-  console.log("mysql-example");
   return {
     props: {
       items: [1, 2, 3, 4],
